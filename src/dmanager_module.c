@@ -9,11 +9,6 @@
 #define DOORS_COUNT 15
 #define MAX_ID_SEED 10000
 
-void initialize_doors(struct door *doors);
-void print_doors(struct door *doors);
-void quick_sort(struct door *doors, int first, int last);
-void swap(struct door *a, struct door *b);
-
 int main() {
   struct door doors[DOORS_COUNT];
 

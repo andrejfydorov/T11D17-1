@@ -54,8 +54,6 @@ void remove_door_test(struct node *nodes) {
   int c1 = counter_nodes(nodes);
 
   remove_door(shift_node(nodes, 14), nodes);
-  // print_nodes(nodes);
-  // printf("\n");
 
   int c2 = counter_nodes(nodes);
 
@@ -66,8 +64,6 @@ void remove_door_test(struct node *nodes) {
 
   add_door(shift_node(nodes, 13), temp);
 
-  // print_nodes(nodes);
-  // printf("\n");
   //---------------------------------
   temp = find_door(10, nodes)->value;
   printf("Input: %d  %d\n", temp->id, temp->status);
@@ -90,22 +86,14 @@ void remove_door_test(struct node *nodes) {
 
   c1 = counter_nodes(nodes);
 
-  print_nodes(nodes);
-  printf("\n");
+  struct node *nod = remove_door(nodes, nodes);
 
-  remove_door(nodes, nodes);
-
-  print_nodes(nodes);
-  printf("\n");
-
-  c2 = counter_nodes(nodes);
+  c2 = counter_nodes(nod);
 
   if (c1 > c2)
     printf("SUCCESS\n");
   else
     printf("FAIL\n");
 
-  add_door(nodes, temp);
-  print_nodes(nodes);
-  printf("\n");
+  add_door(nod, temp);
 }
